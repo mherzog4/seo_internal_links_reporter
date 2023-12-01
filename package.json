@@ -1,0 +1,26 @@
+{
+  "name": "boot_seo_tool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node main.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mherzog4/seo_internal_links_reporter.git"
+  },
+  "keywords": [],
+  "author": "Matt Herzog <matt@mattherzog.me> (https://mattherzog.me/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mherzog4/seo_internal_links_reporter/issues"
+  },
+  "homepage": "https://github.com/mherzog4/seo_internal_links_reporter#readme",
+  "devDependencies": {
+    "jest": "29.7.0",
+    "prettier": "3.1.0"
+  }
+}
