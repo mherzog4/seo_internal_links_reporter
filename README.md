@@ -1,1 +1,1 @@
-# seo_internal_links_reporter
+# SEO Internal Links Report Generator
