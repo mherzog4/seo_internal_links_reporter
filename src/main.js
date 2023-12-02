@@ -1,3 +1,5 @@
+import jsdom from 'jsdom';
+
 export function normalizeURL(url) {
   const urlObj = new URL(url);
   let fullPath = `${urlObj.host}${urlObj.pathname}`;
@@ -5,4 +7,26 @@ export function normalizeURL(url) {
     fullPath = fullPath.slice(0, -1);
   }
   return fullPath;
+}
+
+export function getURLSfromHTML(htmlBody, baseURL) {
+  const urls = [];
+  const dom = new jsdom.JSDOM(htmlBody);
+  const aElements = dom.window.document.querySelectorAll('a');
+  for (const aElement of aElements) {
+    if (aElement.href.slice(0, 1) === '/') {
+      try {
+        urls.push(new URL(aElement.href, baseURL).href);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      try {
+        urls.push(new URL(aElement.href).href);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }
+  return urls;
 }
